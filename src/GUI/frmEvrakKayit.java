@@ -84,23 +84,37 @@ public class frmEvrakKayit extends javax.swing.JFrame {
         jLabel7.setText("Havale Birimi");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
+        txttarih.setEditable(false);
+        txttarih.setBackground(new java.awt.Color(204, 204, 204));
         try {
             txttarih.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
         getContentPane().add(txttarih, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 11, 214, -1));
+
+        txtevrakkayitnumarasi.setEditable(false);
+        txtevrakkayitnumarasi.setBackground(new java.awt.Color(204, 204, 204));
         getContentPane().add(txtevrakkayitnumarasi, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 214, -1));
 
+        cmbgelisyeri.setBackground(new java.awt.Color(204, 204, 204));
         cmbgelisyeri.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banka", "Kamu Kurumu", "Özel Sektör", "Bireysel" }));
         getContentPane().add(cmbgelisyeri, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 214, -1));
+
+        txtevraktarihi.setEditable(false);
+        txtevraktarihi.setBackground(new java.awt.Color(204, 204, 204));
         getContentPane().add(txtevraktarihi, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 100, -1));
+
+        txtevraksayi.setEditable(false);
+        txtevraksayi.setBackground(new java.awt.Color(204, 204, 204));
         getContentPane().add(txtevraksayi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 80, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setText("/");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, -1, -1));
 
+        txtevrakkonusu.setEditable(false);
+        txtevrakkonusu.setBackground(new java.awt.Color(204, 204, 204));
         txtevrakkonusu.setColumns(10);
         txtevrakkonusu.setLineWrap(true);
         txtevrakkonusu.setRows(2);
@@ -108,12 +122,15 @@ public class frmEvrakKayit extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 380, 57));
 
+        txtevrakekleri.setEditable(false);
+        txtevrakekleri.setBackground(new java.awt.Color(204, 204, 204));
         txtevrakekleri.setColumns(20);
         txtevrakekleri.setRows(2);
         jScrollPane2.setViewportView(txtevrakekleri);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 380, 60));
 
+        cmbhavalebirimi.setBackground(new java.awt.Color(204, 204, 204));
         cmbhavalebirimi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "İnsan Kaynakları", "Mutemetlik", "Arge", "Yönetim", "İdari İşler" }));
         getContentPane().add(cmbhavalebirimi, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 212, -1));
 
@@ -132,10 +149,24 @@ public class frmEvrakKayit extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 550, 170));
 
+        btnYeniKayit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MEDIA/New File_48px.png"))); // NOI18N
         btnYeniKayit.setText("Yeni Kayıt");
+        btnYeniKayit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnYeniKayit.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnYeniKayit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnYeniKayit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnYeniKayitActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnYeniKayit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 100, 90));
 
+        btnKaydet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MEDIA/Save Archive_48px.png"))); // NOI18N
         btnKaydet.setText("Kaydet");
+        btnKaydet.setEnabled(false);
+        btnKaydet.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnKaydet.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnKaydet.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnKaydet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKaydetActionPerformed(evt);
@@ -143,7 +174,12 @@ public class frmEvrakKayit extends javax.swing.JFrame {
         });
         getContentPane().add(btnKaydet, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 100, 90));
 
+        btnDuzenle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MEDIA/Edit Property_48px.png"))); // NOI18N
         btnDuzenle.setText("Düzenle");
+        btnDuzenle.setEnabled(false);
+        btnDuzenle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDuzenle.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnDuzenle.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnDuzenle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDuzenleActionPerformed(evt);
@@ -151,10 +187,29 @@ public class frmEvrakKayit extends javax.swing.JFrame {
         });
         getContentPane().add(btnDuzenle, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 100, 90));
 
+        btnIptal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MEDIA/Cancel Subscription_48px.png"))); // NOI18N
         btnIptal.setText("İptal");
+        btnIptal.setEnabled(false);
+        btnIptal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnIptal.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnIptal.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnIptal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIptalActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnIptal, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 100, 90));
 
+        btnCikis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MEDIA/Exit Sign_48px.png"))); // NOI18N
         btnCikis.setText("ÇIKIŞ");
+        btnCikis.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnCikis.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnCikis.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnCikis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCikisActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCikis, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 310, 120, 90));
 
         pack();
@@ -174,6 +229,11 @@ public class frmEvrakKayit extends javax.swing.JFrame {
         model.setTarih(txtevraktarihi.getText());
         
         evraklistesi.add(model);
+        
+        btnKaydet.setEnabled(false);
+        btnIptal.setEnabled(false);
+        btnYeniKayit.setEnabled(true);
+        kapat();
         JOptionPane.showMessageDialog(null, "Evrak Başarı ile Kayıt Eddilmiştir.");
         
     }//GEN-LAST:event_btnKaydetActionPerformed
@@ -190,6 +250,81 @@ public class frmEvrakKayit extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, mesaj);
     }//GEN-LAST:event_btnDuzenleActionPerformed
 
+    private void btnCikisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCikisActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_btnCikisActionPerformed
+
+    private void btnYeniKayitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnYeniKayitActionPerformed
+        
+        btnYeniKayit.setEnabled(false);
+        btnKaydet.setEnabled(true);
+        btnIptal.setEnabled(true);  
+        ac();
+        temizle();
+        
+        
+        
+    }//GEN-LAST:event_btnYeniKayitActionPerformed
+
+    private void btnIptalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIptalActionPerformed
+        
+        btnKaydet.setEnabled(false);
+        btnIptal.setEnabled(false);
+        btnYeniKayit.setEnabled(true);
+        kapat();
+    }//GEN-LAST:event_btnIptalActionPerformed
+
+    
+    public void ac(){
+        txtevrakekleri.setEditable(true);
+        txtevrakekleri.setBackground(new java.awt.Color(255, 255, 255));
+        txtevrakkayitnumarasi.setEditable(true);
+        txtevrakkayitnumarasi.setBackground(new java.awt.Color(255, 255, 255));
+        txtevrakkonusu.setEditable(true);
+        txtevrakkonusu.setBackground(new java.awt.Color(255, 255, 255));
+        txtevraksayi.setEditable(true);
+        txtevraksayi.setBackground(new java.awt.Color(255, 255, 255));
+        txtevraktarihi.setEditable(true);
+        txtevraktarihi.setBackground(new java.awt.Color(255, 255, 255));
+        txttarih.setEditable(true);
+        txttarih.setBackground(new java.awt.Color(255, 255, 255));
+        cmbgelisyeri.setEditable(true);
+        cmbgelisyeri.setBackground(new java.awt.Color(255, 255, 255));
+        cmbhavalebirimi.setEditable(true);
+        cmbhavalebirimi.setBackground(new java.awt.Color(255, 255, 255));
+        
+    }
+    
+    public void kapat(){
+        txtevrakekleri.setEditable(false);
+        txtevrakekleri.setBackground(new java.awt.Color(204, 204, 204));
+        txtevrakkayitnumarasi.setEditable(false);
+        txtevrakkayitnumarasi.setBackground(new java.awt.Color(204, 204, 204));
+        txtevrakkonusu.setEditable(false);
+        txtevrakkonusu.setBackground(new java.awt.Color(204, 204, 204));
+        txtevraksayi.setEditable(false);
+        txtevraksayi.setBackground(new java.awt.Color(204, 204, 204));
+        txtevraktarihi.setEditable(false);
+        txtevraktarihi.setBackground(new java.awt.Color(204, 204, 204));
+        txttarih.setEditable(false);
+        txttarih.setBackground(new java.awt.Color(204, 204, 204));
+        cmbgelisyeri.setEditable(false);
+        cmbgelisyeri.setBackground(new java.awt.Color(204, 204, 204));
+        cmbhavalebirimi.setEditable(false);
+        cmbhavalebirimi.setBackground(new java.awt.Color(204, 204, 204));
+        
+    }
+    
+    public void temizle(){
+    txtevrakekleri.setText("");
+    txtevrakkayitnumarasi.setText("");
+    txtevrakkonusu.setText("");
+    txtevraksayi.setText("");
+    txtevraktarihi.setText("");
+    txttarih.setText("");
+         
+    }
+    
     /**
      * @param args the command line arguments
      */
